@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en-US"><head><!-- DEFAULT META TAGS --><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0"><!-- SEO --><meta name="keywords" content="alpha bot flow, alpha flow, options, stocks, order flow, calls, puts"><meta name="description" content="An Alpha Bot System options sweeps bot with data provided by BenderProfitBox and BlackBox."><meta name="robots" content="max-snippet:-1, max-image-preview:large, max-video-preview:-1"><link rel="canonical" href="https://www.alphabotsystem.com/pro/flow/"><meta property="og:locale" content="en_US"><meta property="og:type" content="website"><meta property="og:title" content="On-Demand historic order flow data | Alpha Bot"><meta property="og:description" content="An Alpha Bot System options sweeps bot with data provided by BenderProfitBox and BlackBox."><meta property="og:url" content="https://www.alphabotsystem.com/pro/flow/"><meta property="og:site_name" content="Alpha"><meta property="og:image" content="https://www.alphabotsystem.com/files/uploads/examples/flow/1.png"><!-- FONTS --><link href="https://fonts.googleapis.com/css?family=Open+Sans:300i,400,600&amp;display=swap" rel="stylesheet"><!-- CSS --><link rel="stylesheet" id="default-style-css" href="css/css-style.css" type="text/css" media="all"><link rel="stylesheet" id="dark-style-css" href="css/css-dark-style.css" type="text/css" media="all"><link rel="stylesheet" id="custom-app-style-css" href="css/css-custom-app.css" type="text/css" media="all"><link rel="stylesheet" id="fontawesome-style-css" href="css/css-font-awesome.min.css" type="text/css" media="all"><link rel="stylesheet" id="ionic-icons-style-css" href="css/css-ionicons.css" type="text/css" media="all"><link rel="stylesheet" id="responsive-css" href="css/css-mqueries.css" type="text/css" media="all"><!-- FAVICON --><link rel="shortcut icon" href="favicons/uploads-favicon.png"><!-- DOCUMENT TITLE --><title>Alpha Flow feature guide | Alpha Bot</title><!-- Global site tag (gtag.js) - Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id=G-84YEXENY5V"></script><script>
+		window.dataLayer = window.dataLayer || [];
+
+		function gtag() {
+			dataLayer.push(arguments);
+		}
+		gtag('js', new Date());
+
+		gtag('config', 'G-84YEXENY5V');
+	</script></head><body>
+	<!-- PAGE LOADER -->
+	<div id="page-loader" class="text-light">
+		<span class="loader-icon bullets-jump"><span></span><span></span><span></span></span>
+	</div>
+	<!-- PAGE LOADER -->
+
+
+	<!-- PAGE CONTENT -->
+	<div id="page-content">
+
+		<!-- HEADER -->
+		<header id="header" class="header-left text-light"><div class="header-inner clearfix">
+
+				<!-- LOGO -->
+				<div id="logo" class="logo-left text-light">
+					<a href="www.alphabotsystem.html">
+						<img id="dark-logo" src="images/uploads-logo-alpha-dark.png" srcset="/files/uploads/logo-alpha-dark.png 1x, /files/uploads/logo-alpha-dark@2x.png 2x" alt="Dark Alpha Bot System Logo" title="Dark Alpha Bot System Logo"><img id="light-logo" src="images/uploads-logo-alpha-light.png" srcset="/files/uploads/logo-alpha-light.png 1x, /files/uploads/logo-alpha-light@2x.png 2x" alt="Light Alpha Bot System Logo" title="Light Alpha Bot System Logo"></a>
+				</div>
+
+				<!-- MAIN NAVIGATION -->
+				<div id="menu" class="clearfix">
+
+					<div class="menu-actions">
+						<div class="menu-toggle"><span class="hamburger"></span></div>
+					</div> <!-- END .menu-actions -->
+
+					<div id="menu-inner">
+						<nav id="main-nav" class="underline slide"><ul><li><a href="www.alphabotsystem.html">Home</a></li>
+								<li><a href="alpha-bot.html">Alpha Bot</a>
+									<ul class="sub-menu"><li><a href="alpha-bot.html">Introduction</a></li>
+										<li><a href="alpha-bot.html">Features</a></li>
+										<li><a href="https://discord.com/oauth2/authorize?client_id=401328409499664394&amp;scope=applications.commands%20bot&amp;permissions=604372032" target="_blank">Add to your community</a></li>
+									</ul></li>
+								<li class="current_page_item"><a href="pro.html">Pro Tools</a>
+									<ul class="sub-menu"><li><a href="pro.html">Introduction</a></li>
+										<li><a href="pricing.html">Pricing</a></li>
+										<li><a href="price-alerts.html">Price Alerts</a></li>
+										<li class="current_page_item"><a href="flow.html">Alpha Flow</a></li>
+										<li><a href="satellites.html">Price Satellites</a></li>
+										<li><a href="command-presets.html">Command Presets</a></li>
+									</ul></li>
+								<li><a href="guide.html">Guides</a>
+									<ul class="sub-menu"><li><a href="alpha-bot.html">Alpha Bot documentation</a></li>
+										<li><a href="trading.html">Trading Guide</a></li>
+									</ul></li>
+								<li><a href="communities.html">Communities</a></li>
+								<li><a href="account.html">Account</a></li>
+							</ul></nav></div><!-- END #menu-inner -->
+				</div><!-- END #menu -->
+
+				<div id="header-actions">
+					<div class="header-totop">
+						<a class="totop" href="#">
+							<svg class="arrow arrow-top" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 60 35.35"><path d="M0,16.88a3,3,0,0,0,.16.94,1.51,1.51,0,0,0,.63.78l15,15a2.14,2.14,0,0,0,3.52.08,2.14,2.14,0,0,0-.08-3.52L8.59,19.38H57.5a2.5,2.5,0,1,0,0-5H8.59L19.22,3.59A2.14,2.14,0,0,0,19.3.08a2.14,2.14,0,0,0-3.52.08l-15,15a1.51,1.51,0,0,0-.62.78A3,3,0,0,0,0,16.88Z"></path></svg></a>
+					</div>
+				</div>
+
+				<div id="header-widget" class="headerbutton">
+					<div class="widget" id="account-button">
+						<a href="account.html" class="sr-button style-red button-medium" target="_self"><span>&nbsp;</span></a>
+					</div>
+				</div>
+
+			</div> <!-- END .header-inner -->
+			<span class="pseudo-close header-close"></span>
+		</header><!-- HEADER end --><!-- HERO & BODY --><div id="hero-and-body">
+
+			<!-- HERO  -->
+			<section id="hero" class="hero-auto text-light parallax-section" data-parallax-image="/files/uploads/hero-flow.jpg"><div id="page-title" class="wrapper-big align-center title-bottom">
+					<h1><strong>Alpha Flow</strong></h1>
+					<div class="spacer-small"></div>
+				</div>
+
+			</section><!-- HERO --><!-- PAGEBODY --><section id="page-body"><div id="blog-single">
+					<div class="spacer-medium"></div>
+
+					<div class="blog-content wrapper-small">
+						<p class="h5">An Alpha Bot System options sweeps bot with data provided by BenderProfitBox and BlackBox.</p>
+
+						<div class="spacer-small"></div>
+
+						<h2>Syntax</h2>
+						<p class="h5">To display 10 most recent options sweeps use <code>flow</code>. You can futher filter down requests by including a ticker <code>flow &lt;ticker&gt;</code>.</p>
+
+					</div>
+
+					<div class="wrapper-small">
+						<div class="spacer-small"></div>
+
+						<h2>Examples</h2>
+
+						<!-- COMMENTS -->
+						<div id="blog-comments" class="comments">
+							<ul class="comment-list"><li class="comment">
+									<!--<div class="spacer-small"></div>-->
+									<p class="h5">The following command displays 10 most recent options sweeps.</p>
+									<div class="spacer-small"></div>
+									<div class="comment-inner">
+										<div class="user">
+											<img src="images/uploads-avatar-user.jpg" class="avatar" alt="User avatar"></div>
+										<div class="comment-content">
+											<div class="name">
+												<h5 class="comment-name">John Doe</h5><span class="time">Aug 10, 2020</span>
+											</div>
+											<p class="comment-text">flow</p>
+										</div>
+									</div>
+								</li>
+
+								<li class="comment">
+									<div class="comment-inner">
+										<div class="user">
+											<img src="images/uploads-avatar-alpha.jpg" class="avatar" alt="Alpha avatar"></div>
+										<div class="comment-content">
+											<div class="name">
+												<h5 class="comment-name">Alpha</h5><span class="time">Aug 10, 2020</span>
+											</div>
+											<p class="comment-text"><img src="images/flow-1.png" alt="Overview of Alpha Bot on-demand historic options flow data" title="Alpha Bot on-demand historic options flow data"></p>
+										</div>
+									</div>
+								</li>
+
+								<li class="comment">
+									<div class="spacer-small"></div>
+									<p class="h5">The following command displays 10 most recent options sweeps for AAPL.</p>
+									<div class="spacer-small"></div>
+									<div class="comment-inner">
+										<div class="user">
+											<img src="images/uploads-avatar-user.jpg" class="avatar" alt="User avatar"></div>
+										<div class="comment-content">
+											<div class="name">
+												<h5 class="comment-name">John Doe</h5><span class="time">Aug 10, 2020</span>
+											</div>
+											<p class="comment-text">flow aapl</p>
+										</div>
+									</div>
+								</li>
+
+								<li class="comment">
+									<div class="comment-inner">
+										<div class="user">
+											<img src="images/uploads-avatar-alpha.jpg" class="avatar" alt="Alpha avatar"></div>
+										<div class="comment-content">
+											<div class="name">
+												<h5 class="comment-name">Alpha</h5><span class="time">Aug 10, 2020</span>
+											</div>
+											<p class="comment-text"><img src="images/flow-2.png" alt="Alpha Bot on-demand historic options flow data for AAPL" title="Alpha Bot on-demand historic options flow data"></p>
+										</div>
+									</div>
+								</li>
+
+								<li class="comment">
+									<div class="spacer-small"></div>
+									<p class="h5">The following command displays 10 most recent options sweeps for AMZN.</p>
+									<div class="spacer-small"></div>
+									<div class="comment-inner">
+										<div class="user">
+											<img src="images/uploads-avatar-user.jpg" class="avatar" alt="User avatar"></div>
+										<div class="comment-content">
+											<div class="name">
+												<h5 class="comment-name">John Doe</h5><span class="time">Aug 10, 2020</span>
+											</div>
+											<p class="comment-text">flow amzn</p>
+										</div>
+									</div>
+								</li>
+
+								<li class="comment">
+									<div class="comment-inner">
+										<div class="user">
+											<img src="images/uploads-avatar-alpha.jpg" class="avatar" alt="Alpha avatar"></div>
+										<div class="comment-content">
+											<div class="name">
+												<h5 class="comment-name">Alpha</h5><span class="time">Aug 10, 2020</span>
+											</div>
+											<p class="comment-text"><img src="images/flow-3.png" alt="Alpha Bot on-demand historic options flow data for AMZN" title="Alpha Bot on-demand historic options flow data"></p>
+										</div>
+									</div>
+								</li>
+							</ul></div> <!-- END #blog-comments -->
+						<!-- COMMENTS end -->
+
+					</div> <!-- END .wrapper-small -->
+
+					<div class="spacer-big"></div>
+				</div>
+
+			</section><!-- PAGEBODY --></div>
+		<!-- HERO & BODY -->
+
+		<!-- FOOTER -->
+		<footer id="footer" class="text-light"><div class="footer-inner wrapper">
+
+				<div class="column-section spaced-big clearfix">
+					<div class="column one-third">
+						<img src="images/uploads-logo-alpha-light.png" srcset="/files/uploads/logo-alpha-light.png 1x, /files/uploads/logo-alpha-light@2x.png 2x" alt="Light Alpha Bot System Logo" title="Light Alpha Bot System Logo"><div class="spacer spacer-small"></div>
+						<ul class="socialmedia-widget"><li class="twitter"><a href="https://twitter.com/AlphaBotSystem" target="_blank"></a></li>
+							<!--<li class="youtube"><a href="https://www.youtube.com/channel/UCy_cP_Naabn_YdqsMmx2wpA" target="_blank"></a></li>-->
+							<!--<li class="facebook"><a href="https://www.facebook.com/AlphaBotSystem/" target="_blank"></a></li>-->
+							<!--<li class="instagram"><a href="https://www.instagram.com/alphabotsystem/" target="_blank"></a></li>-->
+						</ul></div>
+
+					<div class="column one-third">
+						<div class="widget">
+							<h5 class="widget-title title-alt"><strong>Company</strong></h5>
+							<ul class="menu"><li><a href="about.html">About Us</a></li>
+								<li><a href="terms-of-service.html">Terms of Service</a></li>
+								<li><a href="privacy-policy.html">Privacy Policy</a></li>
+							</ul></div>
+					</div>
+
+					<div class="column one-third last-col">
+						<div class="widget">
+							<h5 class="widget-title title-alt"><strong>Community</strong></h5>
+							<ul class="menu"><li><a href="faq.html">Frequently Asked Questions</a></li>
+								<li><a href="https://discordapp.com/invite/GQeDE85" target="_blank">Support on Discord</a></li>
+								<li><a href="community-rules.html">Community Rules</a></li>
+							</ul></div>
+					</div>
+				</div>
+
+			</div>
+		</footer><!-- FOOTER --></div> <!-- END #page-content -->
+	<!-- PAGE CONTENT -->
+
+	<!-- FIREBASE -->
+	<script src="js/8.2.1-firebase-app.js"></script><script src="js/8.2.1-firebase-auth.js"></script><script src="js/8.2.1-firebase-performance.js"></script><script src="js/firebase-init.js"></script><!-- SCRIPTS --><script src="js/js-jquery-1.12.4.min.js"></script><script type="text/javascript" src="js/js-jquery.backgroundparallax.min.js"></script><script type="text/javascript" src="js/js-plugins.js"></script><script type="text/javascript" src="js/js-jquery.sticky-kit.min.js"></script><script type="text/javascript" src="js/js-script.js"></script></body></html>
